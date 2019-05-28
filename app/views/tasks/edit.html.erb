@@ -1,0 +1,27 @@
+
+<h1>Edit Task</h1>
+
+<%= form_for(@task) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :details %>
+  <%= f.text_field :details %>
+  <%= f.submit %>
+<% end %>
+
+<% if @task.completed == true %>
+    <p>
+      <input type="checkbox">This task is not completed yet
+    </p>
+  <% else %>
+    <p>
+    <input type="checkbox" checked>This task is not completed yet
+    </p>
+  <% end %>
+
+
+  <p>
+  <%= link_to "Back to list", task_list_path %>
+  </p>
+
+
